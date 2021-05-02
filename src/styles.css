@@ -12,6 +12,10 @@ h3 {
     font-size: 22px;
 }
 
+.footer{
+    text-align: center;
+}
+
 a, .unit{
     color: black;
     text-emphasis: none;
