@@ -1,0 +1,58 @@
+h1,h2,h3,p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: 52px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+a, .unit{
+    color: black;
+    text-emphasis: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.weatherApp   {
+    border: 1px solid grey;
+    border-radius: 6px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.currentWeather {
+	padding: 40px;
+	padding-bottom: 0;
+}
+
+#future-forecast {
+	text-align: center;
+	border-top: 1px solid grey;
+	margin: 0 auto;
+	padding: 10px 40px;
+}
+
+#weather-icon {
+    font-family: 'Comfortaa', cursive;
+		margin-bottom: 0;
+}
+
+#current-location {
+    font-family: 'Bebas Neue', cursive;
+		margin-top: 0;
+}
+
+.searchBar {
+    text-align: center;
+}
+
+#low-temp, #high-temp {
+    opacity: 50%;
+}
+
