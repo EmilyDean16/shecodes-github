@@ -12,13 +12,18 @@ h3 {
     font-size: 22px;
 }
 
-.footer{
-    text-align: center;
-}
-
-a, .unit{
+a{
     color: black;
     text-emphasis: none;
+    font-size: 16px;
+}
+
+.footer{
+    text-align: center;
+    font-size: 16px;
+}
+
+.unit{
     text-align: center;
     font-size: 18px;
 }
