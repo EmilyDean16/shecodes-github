@@ -88,6 +88,34 @@ function getForecast(response) {
 	axios.get(`${apiUrl}`).then(displayForecast);
 }
 
+// sunrise & sunset
+
+function displaySunrise(timestamp) {
+    let now = new Date(timestamp);
+	let hour = now.getHours();
+	if (hour < 10) {
+		hour = `0${hour}`;
+	}
+	let minutes = now.getMinutes();
+	if (minutes < 10) {
+		minutes = `0${minutes}`;
+	}
+    document.querySelector("#sunrise-time").innerHTML = `${hour}:${minutes}`
+}
+
+function displaySunset(timestamp) {
+    let now = new Date(timestamp);
+	let hour = now.getHours();
+	if (hour < 10) {
+		hour = `0${hour}`;
+	}
+	let minutes = now.getMinutes();
+	if (minutes < 10) {
+		minutes = `0${minutes}`;
+	}
+    document.querySelector("#sunset-time").innerHTML = `${hour}:${minutes}`
+}
+
 // update temp
 
 function updateTemp(result) {
@@ -124,6 +152,8 @@ function updateTemp(result) {
 
 	updateTime(result.data.dt * 1000);
 	getForecast(result.data.coord);
+    displaySunrise(result.data.sys.sunrise * 1000);
+    displaySunset(result.data.sys.sunset *1000);
 }
 
 // search bar
@@ -161,4 +191,4 @@ function getCurrentLocation(event) {
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentLocation);
 
-submitSearch("New York");
+submitSearch("Tasmania");
