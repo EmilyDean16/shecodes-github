@@ -1,47 +1,3 @@
-// time
-
-let now = new Date();
-
-let days = [
-    "Sun", 
-    "Mon", 
-    "Tues", 
-    "Wed", 
-    "Thurs", 
-    "Fri", 
-    "Sat"];
-    
-let day = days[now.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sept",
-  "Nov",
-  "Dec"
-];
-
-let month = months[now.getMonth()];
-let date = now.getDate();
-let hour = now.getHours();
-let minutes = now.getMinutes();
-
-let currentDay = document.querySelector("#current-day");
-let currentMonth = document.querySelector("#current-month");
-let currentDate = document.querySelector("#current-date");
-let currentTime = document.querySelector("#current-time");
-
-currentDay.innerHTML = `${day} `
-currentMonth.innerHTML = `${month} `
-currentDate.innerHTML = `${date} `
-currentTime.innerHTML = `${hour}:${minutes}`
-
 // celsius and fahrenheit
 
 function displayUnitFahrenheit(response) {
@@ -72,6 +28,48 @@ fahrenheitButton.addEventListener("click", displayUnitFahrenheit);
 let celciusButton = document.querySelector("#celcius");
 celciusButton.addEventListener("click", displayUnitCelcius);
 
+// update time
+
+function updateTime(timestamp) {
+    let now = new Date (timestamp);
+
+    let days = [
+        "Sun", 
+        "Mon", 
+        "Tues", 
+        "Wed", 
+        "Thurs", 
+        "Fri", 
+        "Sat"];
+        
+    let day = days[now.getDay()];
+    
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sept",
+      "Nov",
+      "Dec"
+    ];
+    
+    let month = months[now.getMonth()];
+    let date = now.getDate();
+    let hour = now.getHours();
+    let minutes = now.getMinutes();
+
+    document.querySelector("#current-day").innerHTML = `${day}`;
+    document.querySelector("#current-month").innerHTML = `${month}`;
+    document.querySelector("#current-date").innerHTML = `${date}`;
+    document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
+}
+
+
 // update temp
 
 function updateTemp(result) {
@@ -91,8 +89,8 @@ function updateTemp(result) {
     document.querySelector("#humidity").innerHTML = result.data.main.humidity;
 
     document.querySelector("#weather-icon").setAttribute("src",
-    `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`
-  );
+    `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`);
+    updateTime(result.data.dt * 1000);
 }
 
 // search bar
