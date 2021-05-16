@@ -47,10 +47,12 @@ a{
 	padding: 10px 40px;
 }
 
-#weather-icon {
+#weather-description {
     font-family: 'Comfortaa', cursive;
-		margin-bottom: 0;
+	margin-bottom: 0;
+    text-transform: capitalize;
 }
+
 
 #current-location {
     font-family: 'Bebas Neue', cursive;
@@ -65,3 +67,7 @@ a{
     opacity: 50%;
 }
 
+.current-forecast .active {
+    color: blueviolet;
+    cursor: default;
+}
