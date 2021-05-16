@@ -1,37 +1,3 @@
-// celsius and fahrenheit
-
-function displayUnitFahrenheit(response) {
-	response.preventDefault();
-	document.querySelector("#current-temp").innerHTML = Math.round(
-		(celciusTemperature * 9) / 5 + 32
-	);
-	document.querySelector("#low-temp").innerHTML = Math.round(
-		(lowCelcius * 9) / 5 + 32
-	);
-	document.querySelector("#high-temp").innerHTML = Math.round(
-		(highCelcius * 9) / 5 + 32
-	);
-}
-
-function displayUnitCelcius(response) {
-	response.preventDefault();
-	document.querySelector("#current-temp").innerHTML = celciusTemperature;
-	document.querySelector("#low-temp").innerHTML = lowCelcius;
-	document.querySelector("#high-temp").innerHTML = highCelcius;
-}
-
-let celciusTemperature = null;
-
-let lowCelciusTemp = null;
-
-let highCelciusTemp = null;
-
-let fahrenheitButton = document.querySelector("#fahrenheit");
-fahrenheitButton.addEventListener("click", displayUnitFahrenheit);
-
-let celciusButton = document.querySelector("#celcius");
-celciusButton.addEventListener("click", displayUnitCelcius);
-
 // update time
 
 let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
@@ -99,13 +65,13 @@ function displayForecast(result) {
 						forecastDay.weather[0].icon
 					}@2x.png"
           alt=""
-          width="28"
+          width="38"
         />
         <div><span class="forecast-high">${Math.round(
 					forecastDay.temp.max
-				)}</span>° | <span class="forecast-low">${Math.round(
+				)}°</span> | <span class="forecast-low">${Math.round(
 					forecastDay.temp.min
-				)}</span>°</div>
+				)}°</span></div>
 
       </div>
   `;

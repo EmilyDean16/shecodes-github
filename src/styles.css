@@ -18,14 +18,14 @@ a{
     font-size: 16px;
 }
 
-.footer{
+.footer {
     text-align: center;
     font-size: 16px;
 }
 
-.unit{
+#unit {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .weatherApp   {
@@ -63,7 +63,7 @@ a{
     text-align: center;
 }
 
-#low-temp, #high-temp {
+#low-temp, #high-temp, .forecast-low {
     opacity: 50%;
 }
 
