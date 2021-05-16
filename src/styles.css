@@ -13,15 +13,15 @@ h3 {
 }
 
 a{
-    color: black;
+    color: white;
     text-emphasis: none;
     font-size: 16px;
 }
 
-.footer {
-    text-align: center;
-    font-size: 16px;
+body {
+    background-color:black;
 }
+
 
 #unit {
     text-align: center;
@@ -29,6 +29,7 @@ a{
 }
 
 .weatherApp   {
+    background-color: white;
     border: 1px solid grey;
     border-radius: 6px;
     max-width: 500px;
@@ -64,10 +65,15 @@ a{
 }
 
 #low-temp, #high-temp, .forecast-low {
-    opacity: 50%;
+    opacity: 40%;
 }
 
-.current-forecast .active {
-    color: blueviolet;
-    cursor: default;
+.footer {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+#low-temp, #high-temp {
+    font-size: 26px;
 }

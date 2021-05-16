@@ -130,12 +130,12 @@ function updateTemp(result) {
 		result.data.main.temp
 	);
 	document.querySelector("#current-location").innerHTML = `${city}, ${country}`;
-	document.querySelector("#low-temp").innerHTML = Math.round(
+	document.querySelector("#low-temp").innerHTML = `${Math.round(
 		result.data.main.temp_min
-	);
-	document.querySelector("#high-temp").innerHTML = Math.round(
+	)}°`;
+	document.querySelector("#high-temp").innerHTML = `${Math.round(
 		result.data.main.temp_max
-	);
+	)}°`;
 	document.querySelector("#weather-description").innerHTML =
 		result.data.weather[0].description;
 	document.querySelector("#wind-speed").innerHTML = Math.round(
