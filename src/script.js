@@ -89,7 +89,10 @@ function updateTemp(result) {
     document.querySelector("#weather-description").innerHTML = result.data.weather[0].description;
     document.querySelector("#wind-speed").innerHTML = Math.round(result.data.wind.speed);
     document.querySelector("#humidity").innerHTML = result.data.main.humidity;
-    console.log(result);
+
+    document.querySelector("#weather-icon").setAttribute("src",
+    `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`
+  );
 }
 
 // search bar
