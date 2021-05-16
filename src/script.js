@@ -69,6 +69,41 @@ function updateTime(timestamp) {
     document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
 }
 
+// update forecast 
+
+function displayForecast(result) {
+    let forecastElement = document.querySelector("#future-forecast");
+    let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="28"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(result);
+}
+
+function getForecast(response) {
+    let apiKey = "b1c1669c8a86a926a2b5510d2ed7b9e2";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.lat}&lon=${response.lon}&appid=${apiKey}&units=metric`;
+    axios.get(`${apiUrl}`).then(displayForecast);
+}
+
 // update temp
 
 function updateTemp(result) {
@@ -91,6 +126,7 @@ function updateTemp(result) {
     `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`);
 
     updateTime(result.data.dt * 1000);
+    getForecast(result.data.coord);
 }
 
 // search bar
