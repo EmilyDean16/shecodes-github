@@ -30,21 +30,16 @@ celciusButton.addEventListener("click", displayUnitCelcius);
 
 // update time
 
-function updateTime(timestamp) {
-    let now = new Date (timestamp);
+let days = [
+    "Sun", 
+    "Mon", 
+    "Tues", 
+    "Wed", 
+    "Thurs", 
+    "Fri", 
+    "Sat"];
 
-    let days = [
-        "Sun", 
-        "Mon", 
-        "Tues", 
-        "Wed", 
-        "Thurs", 
-        "Fri", 
-        "Sat"];
-        
-    let day = days[now.getDay()];
-    
-    let months = [
+let months = [
       "Jan",
       "Feb",
       "Mar",
@@ -57,6 +52,11 @@ function updateTime(timestamp) {
       "Nov",
       "Dec"
     ];
+
+function updateTime(timestamp) {
+    let now = new Date (timestamp);
+        
+    let day = days[now.getDay()];
     
     let month = months[now.getMonth()];
     let date = now.getDate();
@@ -68,7 +68,6 @@ function updateTime(timestamp) {
     document.querySelector("#current-date").innerHTML = `${date}`;
     document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
 }
-
 
 // update temp
 
@@ -90,6 +89,7 @@ function updateTemp(result) {
 
     document.querySelector("#weather-icon").setAttribute("src",
     `http://openweathermap.org/img/wn/${result.data.weather[0].icon}@2x.png`);
+
     updateTime(result.data.dt * 1000);
 }
 
