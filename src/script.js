@@ -68,6 +68,8 @@ function updateTemp(result) {
     document.querySelector("#low-temp").innerHTML = Math.round(result.data.main.temp_min);
     document.querySelector("#high-temp").innerHTML = Math.round(result.data.main.temp_max);
     document.querySelector("#weather-description").innerHTML = result.data.weather[0].description;
+    document.querySelector("#wind-speed").innerHTML = Math.round(result.data.wind.speed);
+    document.querySelector("#humidity").innerHTML = result.data.main.humidity;
 }
 
 function submitSearch(city) {
@@ -144,6 +146,8 @@ function showTemp(result) {
     document.querySelector("#low-temp").innerHTML = Math.round(result.data.main.temp_min);
     document.querySelector("#high-temp").innerHTML = Math.round(result.data.main.temp_max);
     document.querySelector("#weather-description").innerHTML = result.data.weather[0].description;
+    document.querySelector("#wind-speed").innerHTML = Math.round(result.data.wind.speed);
+    document.querySelector("#humidity").innerHTML = result.data.main.humidity;
 }
 
 function currentLocation(position) {
