@@ -1,7 +1,6 @@
 h1,h2,h3,p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    padding-right: 0;
 }
 
 h2 {
@@ -9,15 +8,12 @@ h2 {
     font-weight: bold;
 }
 
-h3 {
-    font-size: 22px;
-}
-
 a{
     color: white;
     text-emphasis: none;
     font-size: 16px;
 }
+
 
 
 #unit {
@@ -29,7 +25,7 @@ a{
     background-color: white;
     border: 1px solid grey;
     border-radius: 6px;
-    max-width: 500px;
+    max-width: 600px;
     margin: 30px auto;
 }
 
@@ -49,12 +45,14 @@ a{
     font-family: 'Comfortaa', cursive;
 	margin-bottom: 0;
     text-transform: capitalize;
+    font-size: 24px;
 }
 
 
 #current-location {
     font-family: 'Bebas Neue', cursive;
-		margin-top: 0;
+	margin-top: 0;
+    font-size: 28px;
 }
 
 .searchBar {
@@ -73,4 +71,29 @@ a{
 
 #low-temp, #high-temp {
     font-size: 26px;
+}
+
+#weather-icon {
+    margin: 0px auto;
+    padding: 0;
+    width: 80%;
+}
+
+#wind-humidity {
+    margin: 0px;
+    padding: 0px;
+}
+
+#sunrise-sunset {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#weather-highlight {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+#weather-hightlight {
+    line-height: 0px;
 }
