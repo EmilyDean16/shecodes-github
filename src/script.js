@@ -38,6 +38,37 @@ function updateTime(timestamp) {
 	document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
 }
 
+// update background
+
+function updateBackground(response) {
+    var temperature = response;
+    let background = document.getElementById("container");
+
+    if(temperature < -0){
+        background.style.backgroundColor = `#96ACAB`;
+    } if(temperature > 0){
+        background.style.backgroundColor = `#94B7CB`;
+    } if(temperature > 5){
+        background.style.backgroundColor = `#d3dfe6`;
+    } if(temperature > 10){
+        background.style.backgroundColor = `#ECE3D0`;
+    } if(temperature > 15){
+        background.style.backgroundColor = `#ecded0`;
+    } if(temperature > 20){
+        background.style.backgroundColor = `#EDCAB6`;
+    } if(temperature > 25){
+        background.style.backgroundColor = `#E4BAB4`;
+    } if(temperature > 30) {
+        background.style.backgroundColor = `#bda5a0`;
+    } if(temperature > 40) {
+        background.style.backgroundColor = `#D697A0`;
+    } else {
+        background.style.backgroundColor = `##9D99A7`;
+    }
+
+}
+
+
 // update forecast
 
 function formatDay(timestamp) {
@@ -154,6 +185,7 @@ function updateTemp(result) {
 	getForecast(result.data.coord);
     displaySunrise(result.data.sys.sunrise * 1000);
     displaySunset(result.data.sys.sunset *1000);
+    updateBackground(Math.round(result.data.main.temp));
 }
 
 // search bar
